@@ -5,6 +5,7 @@
   "main": "bin/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
     "serve": "tsc & nodemon .",
     "prestart": "tsc",
     "start": "node ."
