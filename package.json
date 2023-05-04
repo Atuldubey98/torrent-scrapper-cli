@@ -9,8 +9,14 @@
     "prestart": "tsc",
     "start": "node ."
   },
+  "bin": "bin/index.js",
+  "repository": "https://github.com/Atuldubey98/torrent-scrapper-cli",
+  "homepage": "https://github.com/Atuldubey98/torrent-scrapper-cli",
   "keywords": [
-    "scrapper"
+    "scrapper",
+    "cheerio",
+    "chalk",
+    "commander"
   ],
   "author": "Atul Dubey",
   "license": "ISC",
