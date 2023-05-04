@@ -60,6 +60,7 @@ const file: string = optionsPassed.file
     if (movies.length > 0) {
       const cf = new CreateFile();
       cf.createJsonFile(movies, file);
+      log(chalk.green(`Generated results are available  in file ${file}`));
     }
   } catch (error) {
     console.log(chalk.red("Some error occured"));
