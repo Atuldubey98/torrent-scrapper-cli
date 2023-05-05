@@ -1,6 +1,6 @@
 {
   "name": "torrent-scrapper-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Used for scrapping the torrents according to search and page params",
   "main": "bin/index.js",
   "scripts": {
