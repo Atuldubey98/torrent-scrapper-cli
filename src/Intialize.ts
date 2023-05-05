@@ -30,19 +30,16 @@ class Initilize {
       )
       .option(
         "-k, --key  <value>",
-        "Specify the the torrent site to be scrapped eg -k all,yts,pirateBay"
+        "Specify the the torrent site to be scrapped eg -k all,yts,pirateBay,x1337. Default is all"
       )
-      .option(
-        "-p, --page  <value>",
-        "Specify the the torrent site to be scrapped eg -k all,yts,pirateBay"
-      )
+      .option("-p, --page  <value>", "Specify the page number")
       .requiredOption(
         "-s, --search  <value>",
-        "Specify the the torrent site to be scrapped eg -k all, yts, pirateBay"
+        "Specify the search keyword - mandatory"
       )
       .option(
         "-f, --file <value>",
-        "If file has to generted please specify the location"
+        "Specify the location of file generated with / at the end of directory name. Default location is ${homedir}/$(search)-${date}-${page}"
       )
       .version("1.0.0")
       .parse(process.argv);

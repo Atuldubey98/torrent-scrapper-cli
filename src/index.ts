@@ -24,9 +24,10 @@ const page: number = isNaN(Number(optionsPassed.page))
 const keyword: "all" | "yts" | "x1337" | "pirateBay" =
   optionsPassed.key || "all";
 const search: string = optionsPassed.search || "";
+const fileName = `${search}-${Date.now()}-${page}.json`;
 const file: string = optionsPassed.file
-  ? optionsPassed.file + `${search}.json`
-  : path.resolve(homedir(), `${search}.json`);
+  ? optionsPassed.file + fileName
+  : path.resolve(homedir(), fileName);
 
 (async () => {
   if (search.length === 0 || !existsSync(path.dirname(file))) {
@@ -62,6 +63,7 @@ const file: string = optionsPassed.file
       cf.createJsonFile(movies, file);
       log(chalk.green(`Generated results are available  in file ${file}`));
     }
+    log(chalk.green(`Found ${movies.length} on page ${page}`));
   } catch (error) {
     console.log(chalk.red("Some error occured"));
   }

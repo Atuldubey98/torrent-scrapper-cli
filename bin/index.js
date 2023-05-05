@@ -33,9 +33,10 @@ const page = isNaN(Number(optionsPassed.page))
     : Number(optionsPassed.page);
 const keyword = optionsPassed.key || "all";
 const search = optionsPassed.search || "";
+const fileName = `${search}-${Date.now()}-${page}.json`;
 const file = optionsPassed.file
-    ? optionsPassed.file + `${search}.json`
-    : path_1.default.resolve((0, os_1.homedir)(), `${search}.json`);
+    ? optionsPassed.file + fileName
+    : path_1.default.resolve((0, os_1.homedir)(), fileName);
 (() => __awaiter(void 0, void 0, void 0, function* () {
     if (search.length === 0 || !(0, fs_1.existsSync)(path_1.default.dirname(file))) {
         initilize.displayHelp();
@@ -66,6 +67,7 @@ const file = optionsPassed.file
             cf.createJsonFile(movies, file);
             log(chalk_1.default.green(`Generated results are available  in file ${file}`));
         }
+        log(chalk_1.default.green(`Found ${movies.length} on page ${page}`));
     }
     catch (error) {
         console.log(chalk_1.default.red("Some error occured"));
